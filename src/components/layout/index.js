@@ -1,10 +1,13 @@
 import { NavBar } from "./navBar";
 
-function Layout() {
+function Layout({children}) {
 
     return(
+    <>
         <NavBar/>
+        {children}
 
+    </>
 
 
     )

@@ -5,7 +5,7 @@ function Home() {
 
     return(
         <Layout>
-            
+            <h1>Bienvenido a La Vegana</h1>
         </Layout>
     )
 }

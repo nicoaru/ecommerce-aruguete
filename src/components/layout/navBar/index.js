@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <div className='navBar'>
             <img src={logo} height='50px' width='50px' alt='logo'/>
-            <img src={bajada} height='30px' alt='bajada'/>
+            <img src={bajada} height='40px' alt='bajada'/>
             <ul>
                 <li>
                     Home
