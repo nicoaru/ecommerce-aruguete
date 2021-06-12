@@ -1,15 +1,13 @@
 import './App.css';
+import { Home } from "./pages/home"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Entrega clase 2.
-        </p>
-        <p>Aruguete</p>
-      </header>
-    </div>
+    <>
+    <Home/>
+    <h1>Bienvenido a La Vegana</h1>
+    </>
   );
 }
 

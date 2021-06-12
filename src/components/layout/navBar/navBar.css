@@ -1,0 +1,17 @@
+.navBar {
+    background-color: rgb(24, 22, 22);
+    padding: 20px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+li {
+    list-style: none;
+    padding: 0px 20px;
+}
