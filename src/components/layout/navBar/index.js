@@ -1,9 +1,11 @@
 import React from 'react';
+import { CartWidget } from '../../cartWidget';
 import './navBar.css';
-import logo from '../../../recursos/logo-color-blanco.png'
-import bajada from '../../../recursos/bajada-blanco.png'
-function NavBar() {
+import logo from '../../../recursos/logo-color-blanco.png';
+import bajada from '../../../recursos/bajada-blanco.png';
 
+
+function NavBar() {
     return (
         <div className='navBar'>
             <img src={logo} height='50px' width='50px' alt='logo'/>
@@ -19,6 +21,7 @@ function NavBar() {
                     Comprar
                 </li>
             </ul>
+            <CartWidget/>
         </div>
 
 
