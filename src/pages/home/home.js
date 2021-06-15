@@ -1,6 +1,6 @@
-import { Layout } from "../../components/layout";
+import { Layout } from "../../components/layout/layout";
 import './home.css'
-import { ItemListContainer } from '../../components/itemListContainer'
+import { ItemListContainer } from '../../components/itemListContainer/itemListContainer'
 
 function Home() {
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { CartWidget } from '../../cartWidget';
+import { CartWidget } from '../../cartWidget/cartWidget';
 import './navBar.css';
-import logo from '../../../recursos/logo-color-blanco.png';
+import logo from '../../../recursos/logo-color-negro.png';
 import bajada from '../../../recursos/bajada-blanco.png';
 
 
