@@ -5,11 +5,11 @@ function ItemCount(props) {
 
     const [itemAmount, setItemAmount] = useState(props.initial)
       
-    function onAdd () {
-        if (props.stock !== 0) {
-            alert(`Ahora se deberian agregar ${itemAmount} items al carrito!`)
-        }
-    } 
+    // function onAdd () {
+    //     if (props.stock !== 0) {
+    //         alert(`Ahora se deberian agregar ${itemAmount} items al carrito!`)
+    //     }
+    // } 
 
 
     const restarItem = () => {
@@ -42,7 +42,7 @@ function ItemCount(props) {
                 <div className='amount'>{itemAmount}</div>
                 <div className='sumarItem' onClick={sumarItem}>+</div>
             </div>
-            <div className='btn' onClick={onAdd}>Agregar al carrito</div>
+            <div className='btn' onClick={() => props.onAdd(itemAmount)}>Agregar al carrito</div>
         </div>
     )
 }
