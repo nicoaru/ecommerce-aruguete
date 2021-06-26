@@ -1,12 +1,10 @@
-import './App.css';
-import { Home } from "./pages/home/home"
-
+import React from 'react'
+import { ItemDetailContainer } from './pages/itemDetailContainer/itemDetailContainer'
 
 function App() {
   return (
-    <Home/>
-
-  );
+      <ItemDetailContainer/>
+  )
 }
 
-export default App;
+export {App};

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './itemCount.css'
 
-function ItemCount(props) {
+function ItemCount({initial, stock, onAdd}) {
 
-    const [itemAmount, setItemAmount] = useState(props.initial)
+    const [itemAmount, setItemAmount] = useState({initial})
       
     // function onAdd () {
     //     if (props.stock !== 0) {
@@ -13,7 +13,7 @@ function ItemCount(props) {
 
 
     const restarItem = () => {
-        if (props.stock !== 0) {
+        if ({stock} !== 0) {
             if (itemAmount !== 1) {
                 let newAmount = itemAmount-1
                 setItemAmount(newAmount)
@@ -22,17 +22,17 @@ function ItemCount(props) {
     }
     
     const sumarItem = () => {
-        if (props.stock !== 0) {
-            if (itemAmount !== props.stock) {
+        if ({stock} !== 0) {
+            if (itemAmount !== {stock}) {
                 let newAmount = (itemAmount+1)
                 setItemAmount(newAmount)            
             }
         }
     }
     //STYLES
-        if (props.stock === 0) {
+        // if (props.stock === 0) {
             
-        }
+        // }
 
     return (
         <div className='itemCountContainer'>
@@ -42,9 +42,9 @@ function ItemCount(props) {
                 <div className='amount'>{itemAmount}</div>
                 <div className='sumarItem' onClick={sumarItem}>+</div>
             </div>
-            <div className='btn' onClick={() => props.onAdd(itemAmount)}>Agregar al carrito</div>
+            <div className='btn' onClick={() => onAdd(itemAmount)}>Agregar al carrito</div>
         </div>
     )
 }
 
-export { ItemCount}
+export { ItemCount }

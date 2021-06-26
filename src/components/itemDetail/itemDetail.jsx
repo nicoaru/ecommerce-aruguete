@@ -1,11 +1,10 @@
 import React from 'react'
-import './item.css'
-import { ItemCount } from '../itemCount/itemCount'
+import './itemDetail.css'
 
-function Item({item}) {
+function ItemDetail({item}) {
 
 
-    return(
+    return (
         <div id={item.id} className='card'>
             <div className='imgContainer'>
                 <img src={item.pictureUrl} width='100%' alt='imagen del producto'/>
@@ -18,4 +17,4 @@ function Item({item}) {
     )
 }
 
-export { Item }
+export { ItemDetail }
