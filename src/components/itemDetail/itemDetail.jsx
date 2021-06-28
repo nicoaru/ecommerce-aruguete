@@ -3,7 +3,7 @@ import './itemDetail.css'
 import loadingGif from '../../recursos/spinner.svg'
 
 function ItemDetail({item}) {
-
+    console.log(`ItemDetail: ${item.title}`)
 
     return (
         <div>

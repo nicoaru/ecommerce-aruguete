@@ -4,7 +4,7 @@ import './itemListContainer.css'
 import { Layout } from '../../components/layout/layout'
 import { ItemList } from '../../components/itemList/itemList'
 
-function ItemListContainer(props) {
+function ItemListContainer() {
     
     //ARRAY DE PRODUCTOS que vendria del servidor
     const productos = [
@@ -58,8 +58,8 @@ function ItemListContainer(props) {
         category: 'empanadas'},           
     ]
     //CATEGORY ID que se obtiene por parametro
-    // const { categoryId } = useParams()
-
+    let {categoryId} = useParams();
+    console.log(`En ItemListcontainer estamos en la categoria ${categoryId}`)
     //DEFINO EL STATE itemsMostrar
     const [itemsMostrar, setItemsMostrar] = useState([])
 
@@ -83,8 +83,7 @@ function ItemListContainer(props) {
 
     return (
         <Layout>
-            <ItemList itemsMostrar={itemsMostrar}/>
-            {/* <ItemList itemsMostrar={itemsMostrar} categoryId={categoryId} /> */}
+            <ItemList itemsMostrar={itemsMostrar} categoryId={categoryId} />
         </Layout>
     )
 }

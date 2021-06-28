@@ -8,21 +8,20 @@ import loadingGif from '../../recursos/spinner.svg'
 function ItemList({itemsMostrar, categoryId}) {
 
 
-    //console.log(`Estamos en la catetgoria: ${categoryId}`)
+    console.log(`En ItemList estamos en la catetgoria: ${categoryId}`)
 
-    // let itemsJSX = categoryId ? 
-    //     itemsMostrar.filter(item => item.category === categoryId).map(item => <Item item={item} key={item.id}/>)
-    //     :
-    //     itemsMostrar.map((item) => <Item item={item} key={item.id}/>);
+    let itemsJSX = categoryId ? 
+        itemsMostrar.filter(item => item.category === categoryId).map(item => <Item item={item} key={item.id}/>)
+        :
+        itemsMostrar.map((item) => <Item item={item} key={item.id}/>);
 
-    let itemsJSX = itemsMostrar.map((item) => <Item item={item} key={item.id}/>)
 
-    console.log(itemsJSX)
+    console.log(`Se van a mostrar los siguientes productos: ${itemsJSX}`)
 
     return(
         <div id='itemsContainer'>
 
-        {itemsJSX.length === 0 
+        {itemsMostrar.length === 0 
         ? <img src={loadingGif} alt='spinner' height='150px'/> 
         : itemsJSX 
         } 

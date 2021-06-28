@@ -1,19 +1,20 @@
 import React from 'react'
-import {  BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {  BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ItemListContainer } from "./pages/itemListContainer/itemListContainer"
 import { ItemDetailContainer } from './pages/itemDetailContainer/itemDetailContainer'
 import { PageNotFound} from './pages/pageNotFound/pageNotFound'
+
 function Routes() {
   return (
       <Router>
         <Switch>
           <Route exact path='/'>
             <ItemListContainer/>
-          </Route>
-          <Route path='/category/:id'>
+          </Route> 
+          <Route path='/category/:categoryId'>
             <ItemListContainer/>
           </Route>
-          <Route path='/item/:id'>
+          <Route path='/item/:itemId'>
             <ItemDetailContainer/>
           </Route>
           <Route path='*'>
@@ -24,4 +25,4 @@ function Routes() {
   );
 }
 
-export default Routes;
+export { Routes };
