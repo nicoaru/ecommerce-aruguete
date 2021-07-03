@@ -1,5 +1,4 @@
 import React from 'react'
-import { useParams, Link, NavLink } from 'react-router-dom'
 import './itemList.css'
 import { Item } from '../item/item'
 import loadingGif from '../../recursos/spinner.svg'

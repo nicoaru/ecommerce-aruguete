@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link, NavLink, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './itemListContainer.css'
 import { Layout } from '../../components/layout/layout'
 import { ItemList } from '../../components/itemList/itemList'

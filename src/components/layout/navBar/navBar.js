@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { CartWidget } from '../../cartWidget/cartWidget';
 import './navBar.css';
 import logo from '../../../recursos/logo-color-negro.png';
