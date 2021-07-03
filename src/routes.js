@@ -3,6 +3,7 @@ import {  BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ItemListContainer } from "./pages/itemListContainer/itemListContainer"
 import { ItemDetailContainer } from './pages/itemDetailContainer/itemDetailContainer'
 import { PageNotFound} from './pages/pageNotFound/pageNotFound'
+import { Cart } from './pages/cart/cart'
 
 function Routes() {
   return (
@@ -16,6 +17,9 @@ function Routes() {
           </Route>
           <Route path='/item/:itemId'>
             <ItemDetailContainer/>
+          </Route>
+          <Route path='/cart'>
+            <Cart/>
           </Route>
           <Route path='*'>
             <PageNotFound/>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './item.css'
-import { ItemCount } from '../itemCount/itemCount'
 
 function Item({item}) {
 
@@ -10,13 +9,16 @@ function Item({item}) {
     return(
 
         <div id={item.id} className='item-card'>
+            <Link className='link' to={path}>
             <div className='imgContainer'>
                 <img src={item.pictureUrl} width='100%' alt='imagen del producto'/>
             </div>            
-            <Link className='className' to={path}>{item.title}</Link>
+            <h1 className='className'>{item.title}</h1>
             <h2 className='price'>$ {item.price}</h2>
             <p className='description'>{item.description}</p>
-            <p className='category'>{item.category}</p>
+            <p className='category'>{item.category}</p>            
+            </Link>
+
         </div>
 
     )

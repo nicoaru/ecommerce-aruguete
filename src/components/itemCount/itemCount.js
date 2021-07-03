@@ -1,50 +1,37 @@
 import React, { useState } from 'react'
 import './itemCount.css'
 
-function ItemCount({initial, stock, onAdd}) {
-
-    const [itemAmount, setItemAmount] = useState({initial})
-      
-    // function onAdd () {
-    //     if (props.stock !== 0) {
-    //         alert(`Ahora se deberian agregar ${itemAmount} items al carrito!`)
-    //     }
-    // } 
+function ItemCount({ initial, stock, onAdd }) {
+    
+    console.log(`stock => ${stock}`)
+    const [itemAmount, setItemAmount] = useState(stock === 0 ? 'Sin stock' : initial)
+    
+    let disabled
+    stock === 0 ? disabled = true : disabled = false;
 
 
     const restarItem = () => {
-        if ({stock} !== 0) {
-            if (itemAmount !== 1) {
-                let newAmount = itemAmount-1
-                setItemAmount(newAmount)
-            }
+        if (stock !== 0 && itemAmount > 1) {
+            setItemAmount(itemAmount-1)
         }
-    }
-    
+    } 
     const sumarItem = () => {
-        if ({stock} !== 0) {
-            if (itemAmount !== {stock}) {
-                let newAmount = (itemAmount+1)
-                setItemAmount(newAmount)            
-            }
+        if (stock !== 0 && itemAmount < stock) {
+            setItemAmount(itemAmount+1)
         }
     }
-    //STYLES
-        // if (props.stock === 0) {
-            
-        // }
 
     return (
         <div className='itemCountContainer'>
-            <p>Item Count</p>
             <div className='itemCount'>
                 <div className='restarItem' onClick={restarItem}>-</div>
                 <div className='amount'>{itemAmount}</div>
                 <div className='sumarItem' onClick={sumarItem}>+</div>
             </div>
-            <div className='btn' onClick={() => onAdd(itemAmount)}>Agregar al carrito</div>
+            <button className='btn' onClick={() => onAdd(itemAmount)} disabled={disabled}>Agregar al carrito</button>
         </div>
     )
+
 }
 
 export { ItemCount }
