@@ -32,7 +32,7 @@ function ItemDetail({item}) {
             <img src={loadingGif} alt='spinner' height='150px'/> 
             :
             (item instanceof Error ?
-            <div>Lo sentimos! El producto solicitado ya no existe entre nosotros..</div>
+            <div>{item.message}</div>
             :    
             <div id={item.id} className='detail-card'>
                 <div className='imgContainer'>

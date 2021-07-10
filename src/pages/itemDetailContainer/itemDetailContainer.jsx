@@ -39,7 +39,7 @@ function ItemDetailContainer(props) {
         {id: 4,
         title: 'Empanada Calabresa',
         price: 75,
-        description: 'Longaniza vegana, morrón y queso de tofu🤤 en masa de morrón. Son un 🔥.. ',
+        description: 'Longaniza vegana, morrón y queso de tofu🤤 en masa de morrón. Son un 🔥... ',
         pictureUrl: '/recursos/empanadaLonganiza.png',
         category: 'empanadas',
         stock: 3},               
@@ -91,7 +91,7 @@ function ItemDetailContainer(props) {
                         setItemMostrar(item)
                     }
                     else {
-                        throw new Error('El producto solicitado ya no existe entre nosotros..')
+                        throw new Error('Lo sentimos! El producto solicitado ya no existe entre nosotros..')
                     }
                 },
                 (error) => {

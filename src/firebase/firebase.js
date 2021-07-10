@@ -3,16 +3,15 @@ import 'firebase/firestore'
 
 
 var firebaseConfig = {
-    apiKey: "AIzaSyDW9SD_oRHpe2G10NxZKWRmNaMFzF3qWog",
-    authDomain: "ecommerce-aruguete.firebaseapp.com",
-    projectId: "ecommerce-aruguete",
-    storageBucket: "ecommerce-aruguete.appspot.com",
-    messagingSenderId: "856812968747",
-    appId: "1:856812968747:web:d23ffed921cd5b0272036e"
+  apiKey: "AIzaSyBiOls0zGETE9_Ok3y7lSrlk9wZ3aw4myE",
+  authDomain: "ecommerce-aruguete-la-vegana.firebaseapp.com",
+  projectId: "ecommerce-aruguete-la-vegana",
+  storageBucket: "ecommerce-aruguete-la-vegana.appspot.com",
+  messagingSenderId: "346356126283",
+  appId: "1:346356126283:web:154dfdb684f180553d33ce"
 };
 
+// Initialize Firebase
+const fb = firebase.initializeApp(firebaseConfig);
 
-  // Initialize Firebase
-  const fb = firebase.initializeApp(firebaseConfig);
-
-  export const dataBase = fb.firestore()
+export const dataBase = fb.firestore()
