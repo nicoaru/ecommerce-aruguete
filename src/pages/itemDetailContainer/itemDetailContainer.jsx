@@ -14,14 +14,14 @@ function ItemDetailContainer(props) {
         description: 'Salsa de tomate y salteado de zukinis y cebolla, en salsa blanca bieeeen cremosa.',
         pictureUrl: '/recursos/zukini.png',
         category: 'pizzas',
-        stock: 5},
+        stock: 0},
         {id: 1,
         title: 'CALABAZA Y SÉSAMO',
         price: 350,
         description: 'Salsa de tomate, cebolla, calabaza asada, verdeo, salsa tahini (sésamo blanco) y semillitas de sésamo negro.',
         pictureUrl: '/recursos/calabaza.png',
         category: 'pizzas',
-        stock: 8}, 
+        stock: 0}, 
         {id: 2,
         title: 'VEGETALES ASADOS',
         price: 350,
@@ -71,7 +71,7 @@ function ItemDetailContainer(props) {
     console.log(`ItemDetailContainer. ID de producto es: ${itemId}`)
 
     //DEFINO EL STATE itemMostrar
-    const [itemMostrar, setItemMostrar] = useState([])
+    const [itemMostrar, setItemMostrar] = useState()
 
 
     //PEDIDO AL SERVIDOR DE PRODUCTOS A MOSTRAR (solo en 1er render) Y LO GUARDO EN EL STATE productos
@@ -81,15 +81,27 @@ function ItemDetailContainer(props) {
         () => resolve (productos),
         2000);
         }) 
-        getProductos.then( 
-            items => {
-                const item = (items.filter(prod => prod.id === parseInt(itemId))[0])
-                setItemMostrar(item)
-                console.log(item)
-            },
-            error => {
-                console.log(`Ooops .. Hubo un error trayendo del servidor el producto a mostrar. Por favor intenta nuevamente mas tarde`)
-            })
+        getProductos
+            .then( 
+                (items) => {
+                    const item = (items.filter(prod => prod.id === parseInt(itemId))[0])
+                    console.log('El item filtrado es:')
+                    console.log(item)
+                    if(item) {
+                        setItemMostrar(item)
+                    }
+                    else {
+                        throw new Error('El producto solicitado ya no existe entre nosotros..')
+                    }
+                },
+                (error) => {
+                    console.log(`Ooops .. Hubo un error trayendo del servidor el producto a mostrar. Por favor intenta nuevamente mas tarde`)
+                })
+            .catch(
+                (error) => {
+                    setItemMostrar(error)
+                }
+            )
     }, [])
 
 

@@ -9,11 +9,7 @@ function ItemList({itemsMostrar, categoryId}) {
 
     console.log(`En ItemList estamos en la catetgoria: ${categoryId}`)
 
-    let itemsJSX = categoryId ? 
-        itemsMostrar.filter(item => item.category === categoryId).map(item => <Item item={item} key={item.id}/>)
-        :
-        itemsMostrar.map((item) => <Item item={item} key={item.id}/>);
-
+    let itemsJSX = itemsMostrar.map(item => <Item item={item} key={item.id}/>)
 
     console.log(`Se van a mostrar los siguientes productos: ${itemsJSX}`)
 

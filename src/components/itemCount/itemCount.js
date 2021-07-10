@@ -6,22 +6,17 @@ function ItemCount({ initial, stock, onAdd }) {
     
 
 
-
-    const [itemAmount, setItemAmount] = useState(stock === 0 ? 'Sin stock' : initial)
+    let outOfStock = stock == 0 ? true : false;
+    const [itemAmount, setItemAmount] = useState(outOfStock ? 'Sin stock' : initial)
     
-    let disabled
-    stock === 0 ? disabled = true : disabled = false;
+
 
 
     const restarItem = () => {
-        if (stock !== 0 && itemAmount > 1) {
-            setItemAmount(itemAmount-1)
-        }
+        (stock !== 0 && itemAmount > 1) && setItemAmount(itemAmount-1)
     } 
     const sumarItem = () => {
-        if (stock !== 0 && itemAmount < stock) {
-            setItemAmount(itemAmount+1)
-        }
+        (stock !== 0 && itemAmount < stock) && setItemAmount(itemAmount+1)
     }
 
     return (
@@ -31,7 +26,7 @@ function ItemCount({ initial, stock, onAdd }) {
                 <div className='amount'>{itemAmount}</div>
                 <div className='sumarItem' onClick={sumarItem}>+</div>
             </div>
-            <button className='btn' onClick={() => onAdd(itemAmount)} disabled={disabled}>Agregar al carrito</button>
+            <button className='btn' onClick={() => onAdd(itemAmount)} disabled={outOfStock}>Agregar al carrito</button>
         </div>
     )
 

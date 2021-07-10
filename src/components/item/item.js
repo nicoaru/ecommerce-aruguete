@@ -4,12 +4,12 @@ import './item.css'
 
 function Item({item}) {
 
-        let path = `/item/${item.id}`
-        console.log(path)
+        // let path = `/item/${item.id}`
+        // console.log(path)
     return(
 
         <div id={item.id} className='item-card'>
-            <Link className='link' to={path}>
+            <Link className='link' to={`/item/${item.id}`}>
             <div className='imgContainer'>
                 <img src={item.pictureUrl} width='100%' alt='imagen del producto'/>
             </div>            

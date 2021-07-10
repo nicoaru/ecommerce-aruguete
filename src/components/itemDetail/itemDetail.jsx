@@ -1,3 +1,4 @@
+//
 import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './itemDetail.css'
@@ -17,6 +18,7 @@ function ItemDetail({item}) {
     
     console.log(`El cart tiene lo siguiente`)
     console.log(cart)
+    console.log(item)
 
     const onAdd = (quantity) => {
         addItem(item, quantity)
@@ -26,9 +28,12 @@ function ItemDetail({item}) {
     
     return (
         <div>
-            { item.length === 0 ?
+            { !item ?
             <img src={loadingGif} alt='spinner' height='150px'/> 
             :
+            (item instanceof Error ?
+            <div>Lo sentimos! El producto solicitado ya no existe entre nosotros..</div>
+            :    
             <div id={item.id} className='detail-card'>
                 <div className='imgContainer'>
                 <img src={item.pictureUrl} width='100%' alt='imagen del producto'/>
@@ -42,7 +47,7 @@ function ItemDetail({item}) {
                     ? <Link className='link' to='/cart'><button className='btn' >Terminar mi compra</button></Link>
                     : <ItemCount initial={1} stock={item.stock} onAdd={onAdd}></ItemCount>
                 }
-            </div>   
+            </div>)   
             }
 
         </div>

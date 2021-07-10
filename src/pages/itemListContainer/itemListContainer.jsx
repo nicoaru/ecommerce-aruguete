@@ -59,27 +59,31 @@ function ItemListContainer() {
     ]
     //CATEGORY ID que se obtiene por parametro
     let {categoryId} = useParams();
-    console.log(`En ItemListcontainer estamos en la categoria ${categoryId}`)
-    //DEFINO EL STATE itemsMostrar
-    const [itemsMostrar, setItemsMostrar] = useState([])
-
+        console.log(`En ItemListcontainer estamos en la categoria ${categoryId}`)
+    //DEFINO EL STATE DONDE GUARDO LOS DATOS DE getItems
+    const [items, setItems] = useState([])    
+    //DEFINO VARIABLE DONDE GUARDO LOS ITEMS A MOSTRAR (filtrados por categoria)
+    let itemsMostrar
 
     //PEDIDO AL SERVIDOR DE PRODUCTOS A MOSTRAR (solo en 1er render) Y LO GUARDO EN STATE itemsMostrar
     useEffect(() => {
-        const getItemsMostrar = new Promise( (resolve, reject) => {
+        const getItems = new Promise( (resolve, reject) => {
             setTimeout(
                 () => resolve (productos),
                 2000);
         }) 
-        getItemsMostrar.then( 
+        getItems.then( 
             productos => {
-                setItemsMostrar(productos)
+                setItems(productos)
                 console.log(productos)
             },
             error => {
                 console.log(`Ooops .. Hubo un error trayendo del servidor los productos a mostrar. Por favor intenta nuevamente mas tarde`)
             })
     }, [])
+
+    itemsMostrar = (categoryId ? items.filter(item => item.category === categoryId) : items)
+
 
     return (
         <Layout>
