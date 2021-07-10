@@ -20,13 +20,13 @@ function CartWidget() {
 
     return (
         <div className='cartWidgetContainer'>
-            {/* {
-            !carritoVacio &&     */}
-                <Link className='link' to='/cart'>
-                    <img src={cartIcon} height='35px' alt='cart-widget'/>
-                    <div className='widgetQuantity'>{widgetQuantity()}</div>
-                </Link>            
-            {/* } */}
+            {
+            !carritoVacio &&     
+            <Link className='link' to='/cart'>
+                <img src={cartIcon} height='35px' alt='cart-widget'/>
+                <div className='widgetQuantity'>{widgetQuantity()}</div>
+            </Link>            
+            } 
         </div> 
     )
 }
