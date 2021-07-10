@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './itemCount.css'
 
 function ItemCount({ initial, stock, onAdd }) {
-    
     console.log(`stock => ${stock}`)
     
+
+
+
     const [itemAmount, setItemAmount] = useState(stock === 0 ? 'Sin stock' : initial)
     
     let disabled

@@ -1,0 +1,9 @@
+.cartItemContainer {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.cartItemImage {
+    height: 45px;
+    width: 45px;
+}

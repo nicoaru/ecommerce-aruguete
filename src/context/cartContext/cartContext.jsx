@@ -21,6 +21,7 @@ function CartProvider ({ children}) {
         setCart(updatedCart)
     }
     const addNewInCart = (itemToAdd) => {
+        // updatedCart = [...cart, itemToAdd]
         setCart([...cart, itemToAdd])
     }
 
@@ -33,12 +34,19 @@ function CartProvider ({ children}) {
         alert(`Se agregaron ${quantity} ${item.title} al carrito`)
         console.log('Is in cart?')
         console.log(isInCart(item.id))
+        console.log(`Ahora el carrito tiene`)
+        console.log(cart)
     }
 
     const removeItem = (itemId) => {
-        let itemRemoveIndex = cart.findIndex(obj => obj.item.id === itemId)
-        cart.splice(itemRemoveIndex, 1)
-    }
+        let itemIndex = cart.findIndex(obj => obj.item.id === itemId)
+        let updatedCart = cart
+        updatedCart.splice(itemIndex, 1)
+        setCart(updatedCart)
+        console.log(`Ahora el carrito tiene`)
+        console.log(cart)
+
+    }        
 
     const clear = () => cart.splice(0)
 

@@ -1,0 +1,13 @@
+.cartContainer {
+    padding: 30px;
+    margin: 25px 65px;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 3px whitesmoke;
+    border-radius: 15px;
+    color: rgb(24, 22, 22);
+}
+
+.cartContainer h1 {
+    margin-block-start: 0px;
+    height: 1em;
+}
