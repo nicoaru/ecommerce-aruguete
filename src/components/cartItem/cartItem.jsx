@@ -7,7 +7,7 @@ import './cartItem.css'
 function CartItem({item, quantity}) {
     const { cart, addItem, removeItem } = useContext(CartContext)
     console.log(item, quantity)
-    console.log(cart)
+    // console.log(cart)
 
     const onAmountChange = (quantity) => {
         addItem(item, quantity)
@@ -22,6 +22,7 @@ function CartItem({item, quantity}) {
             <h2>${item.price*quantity}</h2>
             <img src={deleteImg} height='30px' width='30px' onClick={() => removeItem(item.id)} alt='delete button'/>
         </div>
+        
     )
 
 

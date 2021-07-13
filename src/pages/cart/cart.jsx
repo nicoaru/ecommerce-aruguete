@@ -31,7 +31,7 @@ function Cart () {
                 </Fragment>
                 :
                 <Fragment>
-                    {cart.map(obj => <><CartItem item={obj.item} quantity={obj.quantity}/> <hr/> </>)} 
+                    {cart.map(obj => <><CartItem item={obj.item} quantity={obj.quantity} key={obj.item.id}/> <hr/> </>)} 
                     <h2 className='precioTotal'>Total {totalCharge()}</h2>
                     <button className='btn' onClick={clear}>Vaciar carrito</button>
                     <button className='btn'>Continuar compra</button>                

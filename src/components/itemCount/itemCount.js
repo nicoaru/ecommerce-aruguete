@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './itemCount.css'
 
 function ItemCount({ initial, stock, onAdd }) {
-    console.log(`stock => ${stock}`)
+    // console.log(`stock => ${stock}`)
     
 
 

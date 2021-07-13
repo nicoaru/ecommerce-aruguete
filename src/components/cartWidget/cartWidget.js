@@ -13,20 +13,17 @@ function CartWidget() {
     const widgetQuantity = () => {
         if(!carritoVacio) {
             let quants = cart.map(obj => obj.quantity)
-            return quants.reduce((acc, cur) => acc + cur)
+            return quants.reduce((acumulado, actual) => acumulado + actual)
         }
     }
 
 
     return (
         <div className='cartWidgetContainer'>
-            {
-            !carritoVacio &&     
             <Link className='link' to='/cart'>
                 <img src={cartIcon} height='35px' alt='cart-widget'/>
                 <div className='widgetQuantity'>{widgetQuantity()}</div>
             </Link>            
-            } 
         </div> 
     )
 }

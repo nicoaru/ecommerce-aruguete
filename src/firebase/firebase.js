@@ -13,5 +13,7 @@ var firebaseConfig = {
 
 // Initialize Firebase
 const fb = firebase.initializeApp(firebaseConfig);
+console.log('fb:', fb)
 
 export const dataBase = fb.firestore()
+console.log('dataBase:', dataBase)
