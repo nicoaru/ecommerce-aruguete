@@ -9,17 +9,8 @@ import { CartContext } from '../../context/cartContext/cartContext'
 
 function ItemDetail({item, loading, error}) {
 
-    // const [quantityToAdd, setQuantityToAdd] = useState()
-    // const onAdd = (quantity) => setQuantityToAdd(quantity)
-    // console.log(`Se agregaran ${quantityToAdd} ${item.title} al carrito`)
-
     const [addedToCart, setAddedToCart] = useState(false)
     const {cart, addItem} = useContext(CartContext)
-    
-    // console.log(`El cart tiene lo siguiente`)
-    // console.log(cart)
-    // console.log(item)
-
     const onAdd = (quantity) => {
         addItem(item, quantity)
         setAddedToCart(true)
@@ -28,8 +19,9 @@ function ItemDetail({item, loading, error}) {
     
     return (
         <div>
-            { loading ?
-            <img src={loadingGif} alt='spinner' height='150px'/> 
+            {
+            loading ?
+            <p>...cargando</p>
             :
                 error ?
                 <div>Oops.. hubo un error con el servidor, intenta de nuevo mas tarde</div>
@@ -41,10 +33,10 @@ function ItemDetail({item, loading, error}) {
                         <div className='imgContainer'>
                         <img src={item.pictureUrl} width='100%' alt='imagen del producto'/>
                         </div>            
-                        <h1 className='className'>{item.title}</h1>
+                        <h1 className='title'>{item.title}</h1>
                         <h2 className='price'>$ {item.price}</h2>
                         <p className='description'>{item.description}</p>
-                        <p>{item.category}</p>
+                        <Link className='link' to={`/category/${item.category}`}><p className='category'>· {item.category} ·</p></Link>            
                         {
                             addedToCart
                             ? <Link className='link' to='/cart'><button className='btn' >Terminar mi compra</button></Link>

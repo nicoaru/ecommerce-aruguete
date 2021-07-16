@@ -12,9 +12,24 @@
     background-color: whitesmoke;
 }
 
-
-
 .imgContainer {
     width: 100%;
-    
+}
+.detail-card img {
+    border-radius: 10px;
+}
+
+.detail-card .title {
+    font-size: 20px;
+}
+.detail-card .price {
+    font-size: 16px;
+}
+.detail-card .description {
+    margin-bottom: 1em;
+}
+.detail-card .category {
+    color: rgb(70, 67, 67);
+    font-style: italic;
+    margin-bottom: 1em;
 }

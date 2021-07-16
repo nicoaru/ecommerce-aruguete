@@ -23,9 +23,6 @@ function NavBar() {
                 <li>
                     <NavLink activeClassName='link-active' className='link' to='/category/empanadas'>Empanadas</NavLink>
                 </li>
-                <li>
-                    <NavLink activeClassName='link-active' className='link' to='/quienes-somos'>Quienes somos</NavLink>
-                </li>
             </ul>
             <CartWidget/>
         </div>

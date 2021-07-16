@@ -9,34 +9,20 @@ function CartProvider ({ children}) {
 
     // ESTADO  -->  cart
     const [cart, setCart] = useState([])
+    
+    let carritoVacio
+    cart.length == 0 ? carritoVacio = true : carritoVacio = false
 
     // FUNCIONES COMPLEMENTARIAS  addItem
     const isInCart = (itemId) => {
         return cart.some(obj => obj.item.id === itemId)
     }
-
     const addAlreadyInCart = (itemId, amountToAdd) => {
         let updatedCart = [...cart]
         updatedCart.forEach(obj => (obj.item.id == itemId) && (obj.quantity = obj.quantity + amountToAdd))
         setCart(updatedCart)
         console.log('Ahora el carrito tiene', updatedCart)
     }
-        //FUNCION alreadyInCart() QUE NO HACE RE RENDER AUTOMATICO
-        // const addAlreadyInCart = (itemId, amountToAdd) => {
-        //     let updatedCart = cart
-        //     updatedCart.forEach(obj => (obj.item.id == itemId) && (obj.quantity = obj.quantity + amountToAdd))
-        //     setCart(updatedCart)
-        //     console.log('Ahora el carrito tiene', updatedCart)
-        // }
-        // OTRA FUNCION alreadyInCart() QUE NO HACE RE RENDER AUTOMATICO
-        // const addAlreadyInCart = (itemId, amountToAdd) => {
-        //     let itemIndex = cart.findIndex(obj => obj.item.id === itemId)
-        //     let updatedCart = cart
-        //     updatedCart[itemIndex].quantity = updatedCart[itemIndex].quantity + amountToAdd
-        //     setCart(updatedCart)
-        //     console.log('Ahora el carrito tiene', updatedCart)
-        // }
-
     const addNewInCart = (itemToAdd) => {
         let updatedCart = [...cart, itemToAdd]
         setCart(updatedCart)
@@ -51,44 +37,34 @@ function CartProvider ({ children}) {
         
         console.log('Is in cart?')
         console.log(isInCart(item.id))
-        // alert(`Se agregaron ${quantity} ${item.title} al carrito`)
-        // console.log(`Ahora el carrito tiene`, cart)
     }
-
     const removeItem = (itemId) => {
         const updatedCart = cart.filter( obj => obj.item.id !== itemId)
         setCart(updatedCart)
     }
-        // FUNCION removeItem() QUE NO HACE RE RENDER AUTOMATICO
-        // const removeItem = (itemId) => {
-        //      let itemIndex = cart.findIndex(obj => obj.item.id === itemId)
-        //      let updatedCart = cart
-        //      updatedCart.splice(itemIndex, 1)
-        //      setCart(updatedCart)
-        //      console.log(`Ahora el carrito tiene`)
-        //      console.log(cart)
-        // }        
-
     const clear = () => {
         let updatedCart = []
         setCart(updatedCart)
         console.log('Ahora el carrito tiene', updatedCart)
     }
-    //  FUNCION clear() QUE NO HACE RE RENDER AUTOMATICO
-    //     const clear = () => {
-    //          let updatedCart = cart
-    //          updatedCart.splice(0)
-    //          setCart(updatedCart)
-    //          console.log('Ahora el carrito tiene', updatedCart)
-    //     }
+    const totalCharge = () => {
+        if(!carritoVacio) {
+            let charges = (cart.map(obj => (obj.item.price * obj.quantity)))
+            return charges.reduce((acumulado, actual) => acumulado + actual)
+    }
+    }
+    const totalQuantity = () => {
+        if(!carritoVacio) {
+            let quants = cart.map(obj => obj.quantity)
+            return quants.reduce((acumulado, actual) => acumulado + actual)
+        }
+    }
 
     return (
-    <CartContext.Provider value={{cart, addItem, removeItem, clear}}>
+    <CartContext.Provider value={{cart, addItem, removeItem, clear, totalCharge, totalQuantity}}>
         {children}
     </CartContext.Provider>
-
     )
-
 }
 
 export { CartProvider }

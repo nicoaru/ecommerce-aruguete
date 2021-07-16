@@ -4,6 +4,8 @@ import { ItemListContainer } from "./pages/itemListContainer/itemListContainer"
 import { ItemDetailContainer } from './pages/itemDetailContainer/itemDetailContainer'
 import { PageNotFound} from './pages/pageNotFound/pageNotFound'
 import { Cart } from './pages/cart/cart'
+import { CheckOut } from './pages/checkOut/checkOut'
+import { Privado } from './pages/privado/privado'
 
 function Routes() {
   return (
@@ -20,6 +22,12 @@ function Routes() {
           </Route>
           <Route path='/cart'>
             <Cart/>
+          </Route>
+          <Route path='/checkout'>
+            <CheckOut/>
+          </Route>
+          <Route path='/privado'>
+            <Privado/>
           </Route>
           <Route path='*'>
             <PageNotFound/>

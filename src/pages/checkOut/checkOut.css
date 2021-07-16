@@ -1,0 +1,67 @@
+/*RESETEO*/
+input {
+    color: unset;
+    background-color: transparent;
+    cursor: text;
+    font: unset;
+    padding: 0px;
+    border: none;
+    border-image: none; 
+}
+
+/*ESTILOS*/
+.checkOutContainer {
+    width: 60%;
+    padding: 30px;
+    margin: 25px auto;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 3px whitesmoke;
+    border-radius: 15px;
+    color: rgb(24, 22, 22);
+}
+.checkOutContainer hr {
+    margin: 2em 0px 1em 0px;
+}
+.checkOutContainer .title {
+    margin-block-start: 0px;
+    /* margin-bottom: 1em; */
+    font-size: 30px;
+    height: 1em;
+}
+.checkOutContainer h2 {
+    font-size: 22px;
+    margin-block-start: 0px;
+    margin-bottom: 1em;
+    height: 1em;
+}
+.checkOutContainer h3 {
+    font-weight: normal;
+    margin-block-start: 0px;
+    height: 1em;
+}
+.checkOutContainer .form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.checkOutContainer .form-flexItem {
+    width: 40%
+}
+.checkOutContainer label input {
+    display: block;
+    width: 100%;
+    border: 1.5px solid rgb(24, 22, 22);
+    border-radius: 10px;
+    padding: 0px 8px;
+}
+.checkOutContainer p {
+    margin: 1em 0px;
+}
+.checkOutContainer .btn {
+    margin-top: 25px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+
+

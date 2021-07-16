@@ -7,8 +7,11 @@ function PageNotFound() {
 
     return(
         <Layout>
-            <h1>Lo sentimos, la pagina que buscas no existe o por alguna razon no se encuentra disponible</h1>
-            <Link to='/'>Volver al INICIO</Link>
+            <div className='pageNotFoundContainer'>
+                <h1>Lo sentimos, la pagina que buscas no existe o por alguna razon no se encuentra disponible</h1>
+                <Link className='btn link' to='/'>Volver al INICIO</Link>
+
+            </div>
         </Layout>
     )
 }
