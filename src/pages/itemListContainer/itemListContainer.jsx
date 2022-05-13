@@ -5,7 +5,7 @@ import './itemListContainer.css'
 import { Layout } from '../../components/layout/layout'
 import { ItemList } from '../../components/itemList/itemList'
 import { dataBase } from '../../firebase/firebase'
-
+////
 function ItemListContainer() {
     //CATEGORY ID que se obtiene por parametro
     let {categoryId} = useParams();
@@ -54,7 +54,7 @@ function ItemListContainer() {
 
     return (
         <Layout>
-            <ItemList itemsMostrar={items} categoryId={categoryId} loading={loading} categoryId={categoryId} error={error}/>
+            <ItemList itemsMostrar={items} categoryId={categoryId} loading={loading} error={error}/>
         </Layout>
     )
 }

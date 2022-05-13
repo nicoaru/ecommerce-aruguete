@@ -4,7 +4,7 @@ import './itemList.css'
 import { Item } from '../item/item'
 import loadingGif from '../../recursos/spinner.svg'
 
-
+////
 function ItemList({itemsMostrar, loading, categoryId, error}) {
 
 
@@ -13,8 +13,8 @@ function ItemList({itemsMostrar, loading, categoryId, error}) {
 
     return(
         <div id='itemsContainer'>
-
-        {loading ? 
+        {itemsJSX}
+        {/* {loading ? 
         <p>...cargando</p>
         // <img src={loadingGif} alt='spinner' height='150px'/>
         :
@@ -25,7 +25,7 @@ function ItemList({itemsMostrar, loading, categoryId, error}) {
                 <div>No tenemos productos con la categoria {categoryId}...</div>
                 :
                 itemsJSX 
-        }
+        } */}
         
         </div>
     )
